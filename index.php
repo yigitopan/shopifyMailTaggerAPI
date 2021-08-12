@@ -73,7 +73,7 @@ $err = curl_error($curl);
 $decoded = json_decode($response, true);
 $mail = $decoded['customer']['email'];
 curl_close($curl);
-$aldikmi = $domain = substr($mail, strpos($mail, '@') + 1);
+$mail =  substr($mail, strpos($mail, '@') + 1);
 $dotSpot = strpos($$mail,".");
 $mail = substr($mail, 0, $dotSpot);
 print_r($mail);
