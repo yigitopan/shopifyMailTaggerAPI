@@ -84,7 +84,7 @@ echo "<br>";
 
 
 if ($err) {
-    echo "cURL Error is #:" . $err;
+    echo "cURL Error is  #:" . $err;
 }
 
 // put start
