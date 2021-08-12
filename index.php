@@ -72,8 +72,7 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
 $mail = $decoded['customer']['email'];
-echo $mail;
-echo "<br>";
+
 
 curl_close($curl);
 $mailArr = explode('@',$mail,2);
@@ -86,8 +85,6 @@ echo "<br>";
 
 if ($err) {
     echo "cURL Error is #:" . $err;
-} else {
-   echo "asd";
 }
 
 // put start
