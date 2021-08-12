@@ -41,7 +41,8 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 
-
+$decoded = json_decode($result);
+print_r($decoded);
 curl_close($ch);
 
 
