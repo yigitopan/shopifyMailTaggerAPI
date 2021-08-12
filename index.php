@@ -73,6 +73,7 @@ $err = curl_error($curl);
 $decoded = json_decode($response, true);
 $mail = $decoded['customer']['email'];
 print_r($mail);
+echo $mail;
 echo "<br>";
 
 curl_close($curl);
