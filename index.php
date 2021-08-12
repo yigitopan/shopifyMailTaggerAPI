@@ -48,6 +48,42 @@ curl_close($ch);
 
 */
 
+// get start
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://9d818fbe82d6ab7751f028ff2966ab20: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@achteck.myshopify.com/admin/api/2021-07/customers/5442193359048.json",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => array(
+        "authorization: Basic OWQ4MThmYmU4MmQ2YWI3NzUxZjAyOGZmMjk2NmFiMjA6c2hwcGFfZjEzZDYyNmQxZWYyNDA4MzYxNDBhMDhkNTM5OWQwMjA=",
+        "cache-control: no-cache",
+        "content-type: application/json",
+        "postman-token: af2f7c61-036e-5ac4-4b9f-9d328a1117c9"
+    ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+$decoded = json_decode($response);
+$email = $decoded['email'];
+curl_close($curl);
+
+if ($err) {
+    echo "cURL Error #:" . $err;
+} else {
+    echo $response;
+    echo $email;
+}
+
+// put start
+
+/* put kes
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -77,7 +113,7 @@ if ($err) {
 } else {
     echo $response;
 }
-
+put kes */
 ?>
 
 
