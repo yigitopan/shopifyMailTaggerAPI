@@ -72,6 +72,7 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
 print_r($decoded['customer']['email']);
+ echo gettype($decoded['customer']['email']);
 curl_close($curl);
 
 if ($err) {
