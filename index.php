@@ -71,11 +71,13 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
-print_r($decoded['customer']['email']);
- echo gettype($decoded['customer']['email']);
+$mail = $decoded['customer']['email'];
 curl_close($curl);
-$aldikmi = $domain = substr($decoded['customer']['email'], strpos($decoded['customer']['email'], '@') + 1);
-echo $aldikmi;
+$aldikmi = $domain = substr($mail, strpos($mail, '@') + 1);
+$dotSpot = strpos($$mail,".");
+$mail = substr($mail, 0, $dotSpot);
+print_r($mail);
+echo "<br>";
 if ($err) {
     echo "cURL Error is #:" . $err;
 } else {
