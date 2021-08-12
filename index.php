@@ -53,15 +53,16 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
 $mail = $decoded['customers'][0]['email'];
-
-
+$userId = $decoded['customers'][0]['id'];
 
 curl_close($curl);
 $mailArr = explode('@',$mail,2);
 $dotSpot = strpos($mailArr[1],".");
 $mailArr[1] = substr($mailArr[1], 0, $dotSpot);
 $mail = $mailArr[1];
+
 echo $mail;
+echo $userId;
 echo "<br>";
 
 
