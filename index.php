@@ -104,7 +104,8 @@ curl_close($curl);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
-    echo $response;
+    // echo $response; put sonrası output simdilik kapadım
+    echo "asd";
 }
 
 ?>
