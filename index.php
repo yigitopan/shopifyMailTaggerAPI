@@ -53,8 +53,8 @@ $schlussel = "9d818fbe82d6ab7751f028ff2966ab20";
 $pw = "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";
 $url = 'https://' . $schlussel . ':' . $pw . '@' . $store . '/admin/api/2021-07/customers.json';
 $data = array ('customer' => array (
-            'email' => 'yigitopan@gmail.com',
-),);
+            'email' => 'yigitopan@gmail.com'
+));
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
