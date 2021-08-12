@@ -74,7 +74,7 @@ $decoded = json_decode($response, true);
 print_r($decoded['customer']['email']);
  echo gettype($decoded['customer']['email']);
 curl_close($curl);
-$aldikmi = strstr($decoded['customer']['email'], '.', '@');
+$aldikmi = $domain = substr($decoded['customer']['email'], strpos($decoded['customer']['email'], '@') + 1);
 echo $aldikmi;
 if ($err) {
     echo "cURL Error #:" . $err;
