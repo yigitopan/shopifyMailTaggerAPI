@@ -1,5 +1,5 @@
 <?php
-/* sen bi uza
+/* bi dk
 include_once("shopify.php");
 
 $shopify = new Shopify();
@@ -15,22 +15,39 @@ echo print_r($customers);
 
 */
 
+include_once("shopify.php");
 
+$shopify = new Shopify();
 
+$store = "achteck.myshopify.com";
+$schlussel = "9d818fbe82d6ab7751f028ff2966ab20";
+$pw = "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";
+$url = 'https://' . $schlussel . ':' . $pw . '@' . $store . '/admin/api/2021-07/customers.json';
 $ch = curl_init();
 
-$url = "https://achteck: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@achteck.myshopify.com/admin/api/2021-07/customers.json";
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
-curl_setopt($ch, CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 
-$resp = curl_exec($ch);
+$headers = array();
+$headers[] = 'Content-Type: application/json';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-if($e = curl_error($ch)){
-    echo $e;
+$result = curl_exec($ch);
+$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE); //can check status code, requst successfully processed if return 200
+
+if (curl_errno($ch)) {
+    echo 'Error:' . curl_error($ch);
 }
-else {
-    $decoded = json_decode($resp);
-    print_r($decoded);
-}
+
+
+curl_close($ch);
+
+
+
 ?>
+
+
+
+
