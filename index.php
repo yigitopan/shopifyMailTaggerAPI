@@ -77,7 +77,7 @@ curl_close($curl);
 $aldikmi = $domain = substr($decoded['customer']['email'], strpos($decoded['customer']['email'], '@') + 1);
 echo $aldikmi;
 if ($err) {
-    echo "cURL Error #:" . $err;
+    echo "cURL Error is #:" . $err;
 } else {
    echo "asd";
 }
