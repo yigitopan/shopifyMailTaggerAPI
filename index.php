@@ -58,7 +58,7 @@ curl_setopt_array($curl, array(
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "PUT",
-    CURLOPT_POSTFIELDS => "{\n    \"customer\": {\n       \"email\": \"yigitopan@hotmail.com\"\n    }\n}",
+    CURLOPT_POSTFIELDS => "{\n    \"customer\": {\n       \"email\": \"yigitopan@gmail.com\"\n    }\n}",
     CURLOPT_HTTPHEADER => array(
         "authorization: Basic OWQ4MThmYmU4MmQ2YWI3NzUxZjAyOGZmMjk2NmFiMjA6c2hwcGFfZjEzZDYyNmQxZWYyNDA4MzYxNDBhMDhkNTM5OWQwMjA=",
         "cache-control: no-cache",
