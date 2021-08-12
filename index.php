@@ -52,10 +52,13 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
+
 $mail = $decoded['customers'][0]['email'];
 $userId = $decoded['customers'][0]['id'];
+$tags = $decoded['customers'][0]['tags'];
 
 curl_close($curl);
+
 $mailArr = explode('@',$mail,2);
 $dotSpot = strpos($mailArr[1],".");
 $mailArr[1] = substr($mailArr[1], 0, $dotSpot);
@@ -64,16 +67,16 @@ $mail = $mailArr[1];
 echo $mail;
 echo $userId;
 echo "<br>";
-
+echo $tags;
 
 if ($err) {
     echo "cURL Error is  #:" . $err;
 }
 
 
-// put start
 
-/* put kes
+
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -103,7 +106,7 @@ if ($err) {
 } else {
     echo $response;
 }
-put kes */
+
 ?>
 
 
