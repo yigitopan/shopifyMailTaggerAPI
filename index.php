@@ -68,6 +68,7 @@ echo $mail;
 echo $userId;
 echo "<br>";
 echo $tags;
+echo gettype($tags);
 
 if ($err) {
     echo "cURL Error is  #:" . $err;
