@@ -72,7 +72,6 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
 $mail = $decoded['customer']['email'];
-print_r($mail);
 echo $mail;
 echo "<br>";
 
@@ -80,7 +79,7 @@ curl_close($curl);
 $mail =  substr($mail, strpos($mail, '@') + 1);
 $dotSpot = strpos($$mail,".");
 $mail = substr($mail, 0, $dotSpot);
-print_r($mail);
+echo $mail;
 echo "<br>";
 
 
