@@ -71,7 +71,7 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 $decoded = json_decode($response, true);
-echo $decoded['customer']['email'];
+print_r($decoded['customer']['email']);
 curl_close($curl);
 
 if ($err) {
