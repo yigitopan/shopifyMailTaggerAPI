@@ -77,7 +77,7 @@ echo "<br>";
 
 curl_close($curl);
 $mailArr = explode('@',$mail,2);
-$dotSpot = strpos($mail,".");
+$dotSpot = strpos($mailArr[1],".");
 $mailArr[1] = substr($mailArr[1], 0, $dotSpot);
 $mail = $mailArr[1];
 echo $mail;
