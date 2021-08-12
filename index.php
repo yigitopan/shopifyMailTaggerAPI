@@ -1,5 +1,5 @@
 <?php
-
+/* sen bi uza
 include_once("shopify.php");
 
 $shopify = new Shopify();
@@ -12,4 +12,25 @@ $customers = $shopify->rest_api('/admin/api/2021-07/customers.json', array(), 'G
 $customers = json_decode($customers['body'], true);
 
 echo print_r($customers);
+
+*/
+
+
+
+$ch = curl_init();
+
+$url = "https://achteck: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@achteck.myshopify.com/admin/api/2021-07/customers.json";
+
+curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+$resp = curl_exec($ch);
+
+if($e = curl_error($ch)){
+    echo $e;
+}
+else {
+    $decoded = json_decode($resp);
+    print_r($decoded);
+}
 ?>
