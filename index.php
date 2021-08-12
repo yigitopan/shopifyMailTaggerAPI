@@ -70,7 +70,8 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
+$decoded = json_decode($response);
+echo $decoded['email'];
 curl_close($curl);
 
 if ($err) {
