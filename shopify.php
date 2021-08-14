@@ -3,7 +3,7 @@
 class Shopify {
     public $api_key;
     public $password;
-    public $shop_url;
+    public $shop_url; //
 
     public function set_apikey($key){
         $this->api_key = $key;
