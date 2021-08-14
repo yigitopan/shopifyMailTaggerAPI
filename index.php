@@ -31,7 +31,7 @@ if ($err) {
       büyük resim */
 
 // +1. satırdan +37. satıra, burada mail domaini alınıyor.
-sleep(10);
+sleep(3);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
