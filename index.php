@@ -1,6 +1,6 @@
 <?php
 // +1. satırdan +37. satıra, burada mail domaini alınıyor.
-sleep(3);
+sleep(5);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
