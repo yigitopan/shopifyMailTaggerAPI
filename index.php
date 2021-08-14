@@ -1,7 +1,7 @@
 <?php
 // +1. satırdan +37. satıra, burada mail domaini alınıyor.
 
-define('SHOPIFY_APP_SECRET', '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');
+define('SHOPIFY_APP_SECRET', '4f22ad936393e9b8e30119376a4cf02b09c3c4687e460176de9075457fab8871');
 
 function verify_webhook($data, $hmac_header)
 {
